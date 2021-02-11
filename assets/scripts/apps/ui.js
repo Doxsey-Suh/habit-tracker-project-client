@@ -104,7 +104,7 @@ const indexActivitySuccess = function (response) {
     //     <td>@mdo</td>
     //   </tr>
     // `)
-
+  // ba ba ba
     }
 
 
