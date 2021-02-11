@@ -73,27 +73,37 @@ const indexActivitySuccess = function (response) {
         return 'No'
       }
     }
+    // $('#tbody').append(`
+    // <tr>
+    //   <th scope="row">2</th>
+    //   <td> hi</td>
+    //   <td>my </td>
+    //   <td>name </td>
+    //   <td>is</td>
+    //   <td>johan</td>
+    // </tr>
+    //   `)
    
     $('#tbody').append(`
     <tr>
-    <th scope="row >2 </th>
-    <td>${item.name}</td>
-    <td>${answer()}</td>
-    <td>${date.toDateString()}</td>
-    <td>${item._id}</td>
-    <td>hi</td>
+      <th scope="row">${item.name}</th>
+      <td>${answer()}</td>
+      <td>${date.toDateString()}</td>
+      <td>${item._id}</td>
+      <td><button>update</button></td>
+      <td><button>delete</button></td>
   </tr>
       `)
-    $('#tbody').append(`
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-      </tr>
-    `)
+    // $('#tbody').append(`
+    //   <tr>
+    //     <th scope="row">1</th>
+    //     <td>Mark</td>
+    //     <td>Otto</td>
+    //     <td>@mdo</td>
+    //     <td>@mdo</td>
+    //     <td>@mdo</td>
+    //   </tr>
+    // `)
 
     }
 
