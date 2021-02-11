@@ -14,9 +14,10 @@ const activityCreateSuccess = function (response) {
     }
   }
   $('#display-activity').html(`Activity: ${response.habit.name}`)
+  $('#activity-inqury').hide()
   $('#display-achievement').html(`Achieved: ${answer()}`)
-  $('#display-area').show()
-  $('#hi-five').show()
+  // $('#display-area').show()
+  // $('#hi-five').show()
   $('#habit-name').val('')
   $('#display-date').html(`Date: ${date.toDateString()}`)
   $('#message2').html('Create Activity Successful')
@@ -33,18 +34,19 @@ const activityCreateFail = function (response) {
 // arrange array newest on top
 const indexActivitySuccess = function (response) {
   store = response
+  console.log(store)
   document.getElementById('index').innerHTML = ''
   // $('#habit-input').hide()
-  $('#delete-update').show()
-  $('#sign-out-form').show()
-  $('#habit-name').val('')
-  $('#message2').show()
-  $('#sign-out-form').show()
-  $('#activity-inqury').show()
-  $('#delete-form').show()
-  $('#display-area').show()
-  $('#update-form').show()
-  $('#index').show()
+  // $('#delete-update').show()
+  // $('#sign-out-form').show()
+  // $('#habit-name').val('')
+  // $('#message2').show()
+  // $('#sign-out-form').show()
+  // $('#activity-inqury').hide()
+  // $('#delete-form').show()
+  // $('#display-area').show()
+  // $('#update-form').show()
+  // $('#index').show()
 
   const index = response.habits
   index.map(myFunction)
