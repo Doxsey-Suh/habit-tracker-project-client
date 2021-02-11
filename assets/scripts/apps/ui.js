@@ -60,15 +60,11 @@ const indexActivitySuccess = function (response) {
 
 
   const index = response.habits
-  index.forEach(myFunction)
+  console.log(index)
+  // index.forEach(myFunction)
   // $('#index').html(toHTML)
-  // for (let i = 0; i < index.length; i++){
-  //   item = index[i]
-
-  // }
-
-
-  function myFunction (item) {
+  for (let i = 0; i < index.length; i++) {
+    const item = index[i]
     const date = new Date(item.createdAt)
     const answer = () => {
       if (item.achieve === true) {
@@ -77,16 +73,52 @@ const indexActivitySuccess = function (response) {
         return 'No'
       }
     }
-    // $('tbody').append(`hello`)
+   
     $('#tbody').append(`
-          <tr> 
-            <th scope="row > ${item.name} </th>
-            <td>${answer()}</td>
-            <td>${date.toDateString()}</td>
-            <td>${item._id}</td>
-          </tr>
-          `)
-  }
+    <tr>
+    <th scope="row >2 </th>
+    <td>${item.name}</td>
+    <td>${answer()}</td>
+    <td>${date.toDateString()}</td>
+    <td>${item._id}</td>
+    <td>hi</td>
+  </tr>
+      `)
+    // $('#tbody').append(`
+    //   <tr>
+    //     <th scope="row">1</th>
+    //     <td>Mark</td>
+    //     <td>Otto</td>
+    //     <td>@mdo</td>
+    //     <td>@mdo</td>
+    //     <td>@mdo</td>
+    //   </tr>
+    // `)
+
+    }
+
+
+
+  // function myFunction (item) {
+    // const item = index[i]
+    // const date = new Date(item.createdAt)
+    // const answer = () => {
+    //   if (item.achieve === true) {
+    //     return 'Yes'
+    //   } else {
+    //     return 'No'
+    //   }
+  //   }
+    // $('tbody').append(`hello`)
+    // $('#tbody').append(`
+    //       <tr> 
+    //         <th scope="row > ${item.name} </th>
+    //         <td>${answer()}</td>
+    //         <td>${date.toDateString()}</td>
+    //         <td>${item._id}</td>
+    //       </tr>
+    //       `)
+  // }
 }
 
 const indexActivityFail = function (response) {
