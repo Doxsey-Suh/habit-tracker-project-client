@@ -36,9 +36,9 @@ const indexActivitySuccess = function (response) {
   store = response
   document.getElementById('index').innerHTML = ''
   // $('#habit-input').hide()
-  $('#delete-update').show()
+  // $('#delete-update').show()
   $('#sign-out-form').show()
-  $('#habit-name').val('')
+  // $('#habit-name').val('')
   $('#message2').show()
   $('#sign-out-form').show()
   $('#activity-inqury').show()
