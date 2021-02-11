@@ -16,8 +16,8 @@ const activityCreateSuccess = function (response) {
   $('#display-activity').html(`Activity: ${response.habit.name}`)
   $('#activity-inqury').hide()
   $('#display-achievement').html(`Achieved: ${answer()}`)
-  // $('#display-area').show()
-  // $('#hi-five').show()
+  $('#display-area').show()
+  $('#hi-five').show()
   $('#habit-name').val('')
   $('#display-date').html(`Date: ${date.toDateString()}`)
   $('#message2').html('Create Activity Successful')
@@ -47,10 +47,27 @@ const indexActivitySuccess = function (response) {
   // $('#display-area').show()
   // $('#update-form').show()
   // $('#index').show()
+  const inde = (`
+  <tr>
+  <th scope="row">1</th>
+  <td>Mark</td>
+  <td>Otto</td>
+  <td>@mdo</td>
+  <td>@mdo</td>
+  <td>@mdo</td>
+</tr>
+  `)
+
 
   const index = response.habits
-  index.map(myFunction)
+  index.forEach(myFunction)
   // $('#index').html(toHTML)
+  // for (let i = 0; i < index.length; i++){
+  //   item = index[i]
+
+  // }
+
+
   function myFunction (item) {
     const date = new Date(item.createdAt)
     const answer = () => {
@@ -60,9 +77,15 @@ const indexActivitySuccess = function (response) {
         return 'No'
       }
     }
-    document.getElementById('index').innerHTML += ' Activity: ' +
-    item.name + ' Achieved: ' + answer() + ' on ' +
-  date.toDateString() + '<br>' + ' ID ' + item._id + '<br>'
+    // $('tbody').append(`hello`)
+    $('#tbody').append(`
+          <tr> 
+            <th scope="row > ${item.name} </th>
+            <td>${answer()}</td>
+            <td>${date.toDateString()}</td>
+            <td>${item._id}</td>
+          </tr>
+          `)
   }
 }
 
