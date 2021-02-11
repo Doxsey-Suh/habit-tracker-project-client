@@ -43,16 +43,23 @@
             </p>
             <h4 id=message></h4>
             <h4 id=message2></h4>
-            <section id=activity-inqury>
-              <h2 >Did you </h2>
+            <!-- <section id=activity-inqury> -->
+              <!-- <h2 >Did you </h2>
                 <input id="habit-name" placeholder="activity name" /><h2>today? </h2>
-              <form id="habit-input">
+              <form id="habit-input"> -->
                 <!-- <legend>Habit Name</legend> -->
                 
-                <button id=yes type="submit" value="true">Yes</button>
+                <!-- <button id=yes type="submit" value="true">Yes</button>
                 <button id=no type=submit value=false>no</button>
+                <h2>today? </h2>
+              </form> -->
+            <!-- </section> -->
+            <h2 id="create-habit-header">Create Habit</h2>
+              <form id="create-habit-form">
+                <input id="habit-name" type="text" name="habit[name]" placeholder="habit name" />
+                <input id="target-number" type="number" name="habit[target]" placeholder="target number" />
+                <button id="submit-habit-button" type=submit>Submit</button>
               </form>
-            </section>
             <div id=delete-update>
               <section>
                 <form id=delete-form>

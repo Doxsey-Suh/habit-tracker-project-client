@@ -10,24 +10,36 @@ let activity = 'run'
 let achievement = false
 let data
 
-function onCreatActivity (e) {
+// function onCreateActivity (e) {
+//   e.preventDefault()
+
+//   activity = $('#habit-name').val()
+
+//   achievement = e.target.value (achievement is the target value, which is 'yes' or 'no'
+//   data = {
+//     habit: {
+//       achieve: achievement, (achieve ia a boolean in the schema, 'false' if no, 'trye' if yes)
+//       name: activity
+//     }
+//   }
+//   api.activityCreate(data)
+//     .then(ui.activityCreateSuccess)
+//     .catch(ui.activityCreateFail)
+//     // .then (() => {indexActivity()})
+//     // .then(ui.indexActivitySuccess)
+// }
+
+function onCreateHabit (e) {
   e.preventDefault()
-
-  activity = $('#habit-name').val()
-
-  achievement = e.target.value
-  data = {
-    habit: {
-      achieve: achievement,
-      name: activity
-    }
-  }
-  api.activityCreate(data)
-    .then(ui.activityCreateSuccess)
-    .catch(ui.activityCreateFail)
-    // .then (() => {indexActivity()})
-    // .then(ui.indexActivitySuccess)
+  const form = e.target
+  const data = getFormFields(form)
+    api.habitCreate(data)
+      // .then(console.log('after the api request'))
+      .then(ui.habitCreateSuccess)
+      // .then(console.log('after ui success but before fail response'))
+      .catch(ui.habitCreateFail)
 }
+
 function onDeleteOne (e) {
   e.preventDefault()
   let data = $('#id').val()
@@ -54,7 +66,7 @@ function onUpdate (e) {
 }
 
 module.exports = {
-  onCreatActivity,
+  onCreateHabit,
   onIndexActivity,
   onDeleteOne,
   onUpdate

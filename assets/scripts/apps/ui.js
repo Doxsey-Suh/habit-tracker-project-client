@@ -2,24 +2,25 @@
 
 let store = require('./../store')
 
-const activityCreateSuccess = function (response) {
+const habitCreateSuccess = function (response) {
   store.habit = response.habit
   const date = new Date(response.habit.createdAt)
   // $('#display-date').html(`Date: ${date.toDateString()}`)
-  const answer = () => {
-    if (response.habit.achieve === true) {
-      return 'yes'
-    } else {
-      return 'No'
-    }
-  }
-  $('#display-activity').html(`Activity: ${response.habit.name}`)
-  $('#display-achievement').html(`Achieved: ${answer()}`)
+  // const answer = () => {
+  //   if (response.habit.achieve === true) {
+  //     return 'yes'
+  //   } else {
+  //     return 'No'
+  //   }
+  // }
+  $('#display-activity').html(`Habit: ${response.habit.name}`)
+  $('#display-achievement').html(`Target: ${response.habit.target}`)
   $('#display-area').show()
   $('#hi-five').show()
   $('#habit-name').val('')
   $('#display-date').html(`Date: ${date.toDateString()}`)
-  $('#message2').html('Create Activity Successful')
+  $('#message2').html('Create Habit Successful')
+  $('form').trigger('reset')
   
   // let createHtml = (`
   // <span> Activity: ${response.habit.name}</span>
@@ -87,7 +88,7 @@ const deleteOneFail = function (response) {
 }
 
 module.exports = {
-  activityCreateSuccess,
+  habitCreateSuccess,
   activityCreateFail,
   indexActivitySuccess,
   indexActivityFail,

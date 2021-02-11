@@ -13,7 +13,7 @@ const indexActivity = function (data) {
   })
 }
 
-const activityCreate = function (data) {
+const habitCreate = function (data) {
   return $.ajax({
     url: config.apiUrl + '/habits',
     headers: {
@@ -46,7 +46,7 @@ const update = function (data) {
 }
 
 module.exports = {
-  activityCreate,
+  habitCreate,
   indexActivity,
   deleteOne,
   update

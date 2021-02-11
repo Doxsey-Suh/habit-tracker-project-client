@@ -40,6 +40,10 @@ $(() => {
   $('#update-form').on('submit', appsEvents.onUpdate)
   // $('#update-btn').on('click', appsEvents.onUpdate)
   $('#delete-update').hide()
+
+
+  // kevin start
+  $('#create-habit-form').on('submit', appsEvents.onCreateHabit)
 })
 
 
