@@ -19,7 +19,7 @@ const habitCreateSuccess = function (response) {
   $('#hi-five').show()
   $('#habit-name').val('')
   $('#display-date').html(`Date: ${date.toDateString()}`)
-  $('#message2').html('Create Habit Successful')
+  // $('#message2').html('Create Habit Successful')
   $('form').trigger('reset')
   
   // let createHtml = (`
