@@ -31,6 +31,7 @@ const activityCreateFail = function (response) {
   // $('#message').delay(1000).fadeOut('slow')
 }
 
+let count = 1
 // arrange array newest on top
 const indexActivitySuccess = function (response) {
   store = response
@@ -52,18 +53,30 @@ const indexActivitySuccess = function (response) {
   // $('#index').html(toHTML)
   function myFunction (item) {
     const date = new Date(item.createdAt)
-    const answer = () => {
-      if (item.achieve === true) {
-        return 'Yes'
-      } else {
-        return 'No'
-      }
-    }
+    // const answer = () => {
+    //   if (item.achieve === true) {
+    //     return 'Yes'
+    //   } else {
+    //     return 'No'
+    //   }
     document.getElementById('index').innerHTML += '<div class="hobby-index-item" id=' + item._id + '>Activity: ' +
     item.name + ' on ' +
-  date.toDateString() + '<br>' + ' ID ' + item._id + '<br><button>I did it</button></div>'
-  }
+  date.toDateString() + '<br>' + ' ID ' + item._id + '<br><button id="did-it">I did it</button></div>'
+  document.getElementById(item._id).addEventListener("click", handleClick)
+  function handleClick () {
+  
+    if (count >= item.target) {
+      alert('good job!')
+      return count = 1
+    }
+  alert(item._id + ' ' + count)
+  return count += 1
 }
+  }
+
+
+}
+
 
 const indexActivityFail = function (response) {
   $('#message2').html('Display Failed')
