@@ -32,6 +32,7 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#message').delay(1000).fadeOut('slow')
   $('#sign-in-form')[0].reset()
+  $('#sign-out-form').show()
 }
 const signInFail = function (response) {
   $('#message').show()

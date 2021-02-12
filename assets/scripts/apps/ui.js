@@ -34,7 +34,7 @@ const activityCreateFail = function (response) {
 // arrange array newest on top
 const indexActivitySuccess = function (response) {
   store = response
-  document.getElementById('index').innerHTML = ''
+  $('#index').html('')
   // $('#habit-input').hide()
   // $('#delete-update').show()
   $('#sign-out-form').show()
@@ -59,9 +59,9 @@ const indexActivitySuccess = function (response) {
         return 'No'
       }
     }
-    document.getElementById('index').innerHTML += ' Activity: ' +
-    item.name + ' Achieved: ' + answer() + ' on ' +
-  date.toDateString() + '<br>' + ' ID ' + item._id + '<br>'
+    document.getElementById('index').innerHTML += '<div class="hobby-index-item" id=' + item._id + '>Activity: ' +
+    item.name + ' on ' +
+  date.toDateString() + '<br>' + ' ID ' + item._id + '<br><button>I did it</button></div>'
   }
 }
 
